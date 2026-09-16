@@ -1,0 +1,86 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ybs3ec1e4ut"]
+
+[ext_resource type="Texture2D" uid="uid://dx7mlggb02oc2" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Animated Sprites/GandalfHardcore Portal sheet.png" id="1_5aj5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xat8e"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4mjc"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxq0u"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duj2m"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jee3f"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hd6b"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6mw0"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iopbc"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axiuh"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pkx8"]
+atlas = ExtResource("1_5aj5w")
+region = Rect2(576, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xat8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4mjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxq0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duj2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jee3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hd6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6mw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iopbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axiuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pkx8")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}]

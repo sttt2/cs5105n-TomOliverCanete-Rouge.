@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c4lk5tl128l87"]
+
+[ext_resource type="Texture2D" uid="uid://cew1d1hlnc57w" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Torch.png" id="1_6xi5e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nlvi"]
+atlas = ExtResource("1_6xi5e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyc0d"]
+atlas = ExtResource("1_6xi5e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8p8p"]
+atlas = ExtResource("1_6xi5e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxu41"]
+atlas = ExtResource("1_6xi5e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn54h"]
+atlas = ExtResource("1_6xi5e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d53cq"]
+atlas = ExtResource("1_6xi5e")
+region = Rect2(160, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nlvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyc0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8p8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxu41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn54h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d53cq")
+}],
+"loop": 1,
+"name": &"burn",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
