@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://hazards/spike.gd" id="1_5c1bn"]
+[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="2_8bivc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tta6p"]
+size = Vector2(12, 8)
+
+[node name="Spike" type="Area2D" unique_id=572007919]
+collision_layer = 4
+script = ExtResource("1_5c1bn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1652144623]
+modulate = Color(1, 0.2, 0.2, 1)
+texture = ExtResource("2_8bivc")
+region_enabled = true
+region_rect = Rect2(16, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=480503025]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_tta6p")

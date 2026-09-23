@@ -1,0 +1,75 @@
+[gd_scene format=4]
+
+[ext_resource type="PackedScene" path="res://hazards/spike.tscn" id="1_y0kc7"]
+[ext_resource type="Script" path="res://hazards/spike.gd" id="2_ne2mo"]
+[ext_resource type="TileSet" path="res://tilesets/platformer_tileset.tres" id="3_6cvei"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="4_que50"]
+[ext_resource type="Script" path="res://player.gd" id="5_hey2k"]
+[ext_resource type="PackedScene" path="res://hazards/goal.tscn" id="6_172wr"]
+[ext_resource type="Script" path="res://hazards/goal.gd" id="7_g2hoc"]
+
+[node name="Level2" type="Node2D" unique_id=355008994]
+
+[node name="Spike" type="Area2D" parent="." unique_id=572007919 instance=ExtResource("1_y0kc7")]
+position = Vector2(88, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="@Area2D@2" type="Area2D" parent="." unique_id=780168474 instance=ExtResource("1_y0kc7")]
+position = Vector2(104, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="@Area2D@3" type="Area2D" parent="." unique_id=1731039180 instance=ExtResource("1_y0kc7")]
+position = Vector2(120, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="@Area2D@4" type="Area2D" parent="." unique_id=891019272 instance=ExtResource("1_y0kc7")]
+position = Vector2(136, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="@Area2D@5" type="Area2D" parent="." unique_id=1709845987 instance=ExtResource("1_y0kc7")]
+position = Vector2(200, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="@Area2D@6" type="Area2D" parent="." unique_id=1010768967 instance=ExtResource("1_y0kc7")]
+position = Vector2(216, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="@Area2D@7" type="Area2D" parent="." unique_id=492692182 instance=ExtResource("1_y0kc7")]
+position = Vector2(232, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="@Area2D@8" type="Area2D" parent="." unique_id=132683690 instance=ExtResource("1_y0kc7")]
+position = Vector2(248, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="@Area2D@9" type="Area2D" parent="." unique_id=285708921 instance=ExtResource("1_y0kc7")]
+position = Vector2(264, 168)
+collision_layer = 4
+script = ExtResource("2_ne2mo")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=27690224]
+tile_map_data = PackedByteArray("AAD7/woAAAABAAEAAAD7/wsAAAABAAIAAAD8/woAAAABAAEAAAD8/wsAAAABAAIAAAD9/woAAAABAAEAAAD9/wsAAAABAAIAAAD+/woAAAABAAEAAAD+/wsAAAABAAIAAAD//woAAAABAAEAAAD//wsAAAABAAIAAAAAAAoAAAABAAEAAAAAAAsAAAABAAIAAAABAAoAAAABAAEAAAABAAsAAAABAAIAAAACAAoAAAABAAEAAAACAAsAAAABAAIAAAADAAoAAAABAAEAAAADAAsAAAABAAIAAAAEAAoAAAABAAEAAAAEAAsAAAABAAIAAAAJAAoAAAABAAEAAAAJAAsAAAABAAIAAAAKAAoAAAABAAEAAAAKAAsAAAABAAIAAAALAAoAAAABAAEAAAALAAsAAAABAAIAAAARAAoAAAABAAEAAAARAAsAAAABAAIAAAASAAoAAAABAAEAAAASAAsAAAABAAIAAAATAAoAAAABAAEAAAATAAsAAAABAAIAAAAUAAoAAAABAAEAAAAUAAsAAAABAAIAAAAVAAoAAAABAAEAAAAVAAsAAAABAAIAAAAWAAoAAAABAAEAAAAWAAsAAAABAAIAAAAXAAoAAAABAAEAAAAXAAsAAAABAAIAAAAYAAoAAAABAAEAAAAYAAsAAAABAAIAAAAZAAoAAAABAAEAAAAZAAsAAAABAAIAAAAaAAoAAAABAAEAAAAaAAsAAAABAAIAAAAbAAoAAAABAAEAAAAbAAsAAAABAAIAAAAcAAoAAAABAAEAAAAcAAsAAAABAAIAAAAdAAoAAAABAAEAAAAdAAsAAAABAAIAAAA=")
+tile_set = ExtResource("3_6cvei")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1781941666 instance=ExtResource("4_que50")]
+position = Vector2(32, 100)
+collision_mask = 7
+script = ExtResource("5_hey2k")
+
+[node name="Goal" type="Area2D" parent="." unique_id=1975725648 instance=ExtResource("6_172wr")]
+position = Vector2(400, 128)
+collision_layer = 8
+script = ExtResource("7_g2hoc")
+next_scene = "res://scenes/level_1.tscn"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.8, 0.8, 0.9, 1)
+

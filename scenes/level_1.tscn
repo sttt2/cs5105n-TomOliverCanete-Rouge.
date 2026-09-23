@@ -1,0 +1,36 @@
+[gd_scene format=4]
+
+[ext_resource type="PackedScene" path="res://hazards/spike.tscn" id="1_pa8r4"]
+[ext_resource type="Script" path="res://hazards/spike.gd" id="2_15mv3"]
+[ext_resource type="TileSet" path="res://tilesets/platformer_tileset.tres" id="3_e3sih"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="4_2y5yt"]
+[ext_resource type="Script" path="res://player.gd" id="5_2os1m"]
+[ext_resource type="PackedScene" path="res://hazards/goal.tscn" id="6_go7sj"]
+[ext_resource type="Script" path="res://hazards/goal.gd" id="7_7gny6"]
+
+[node name="Level1" type="Node2D" unique_id=468349994]
+
+[node name="Spike" type="Area2D" parent="." unique_id=572007919 instance=ExtResource("1_pa8r4")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(176, 240)
+scale = Vector2(10, 2)
+collision_layer = 4
+script = ExtResource("2_15mv3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1577256024]
+tile_map_data = PackedByteArray("AAD7/woAAAABAAEAAAD7/wsAAAABAAIAAAD8/woAAAABAAEAAAD8/wsAAAABAAIAAAD9/woAAAABAAEAAAD9/wsAAAABAAIAAAD+/woAAAABAAEAAAD+/wsAAAABAAIAAAD//woAAAABAAEAAAD//wsAAAABAAIAAAAAAAoAAAABAAEAAAAAAAsAAAABAAIAAAABAAoAAAABAAEAAAABAAsAAAABAAIAAAACAAoAAAABAAEAAAACAAsAAAABAAIAAAADAAoAAAABAAEAAAADAAsAAAABAAIAAAAEAAoAAAABAAEAAAAEAAsAAAABAAIAAAAFAAoAAAABAAEAAAAFAAsAAAABAAIAAAAGAAoAAAABAAEAAAAGAAsAAAABAAIAAAAHAAoAAAABAAEAAAAHAAsAAAABAAIAAAAIAAoAAAABAAEAAAAIAAsAAAABAAIAAAAJAAoAAAABAAEAAAAJAAsAAAABAAIAAAAKAAoA//////////8KAAsA//////////8LAAoA//////////8LAAsA//////////8MAAoA//////////8MAAsA//////////8NAAoAAAABAAEAAAANAAsAAAABAAIAAAAOAAoAAAABAAEAAAAOAAsAAAABAAIAAAAPAAoAAAABAAEAAAAPAAsAAAABAAIAAAAQAAoAAAABAAEAAAAQAAsAAAABAAIAAAARAAoAAAABAAEAAAARAAsAAAABAAIAAAASAAoAAAABAAEAAAASAAsAAAABAAIAAAATAAoAAAABAAEAAAATAAsAAAABAAIAAAAUAAoAAAABAAEAAAAUAAsAAAABAAIAAAAVAAoAAAABAAEAAAAVAAsAAAABAAIAAAAWAAoAAAABAAEAAAAWAAsAAAABAAIAAAAXAAoAAAABAAEAAAAXAAsAAAABAAIAAAAYAAoAAAABAAEAAAAYAAsAAAABAAIAAAA=")
+tile_set = ExtResource("3_e3sih")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=685399153 instance=ExtResource("4_2y5yt")]
+position = Vector2(32, 100)
+collision_mask = 7
+script = ExtResource("5_2os1m")
+
+[node name="Goal" type="Area2D" parent="." unique_id=1975725648 instance=ExtResource("6_go7sj")]
+position = Vector2(320, 128)
+collision_layer = 8
+script = ExtResource("7_7gny6")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.8, 0.8, 0.9, 1)
+

@@ -44,3 +44,6 @@ func _physics_process(delta: float) -> void:
 		anim.play("jump")
 
 	move_and_slide()
+
+func die():
+	get_tree().reload_current_scene()

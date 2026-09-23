@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://hazards/goal.gd" id="1_la5ho"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="2_024k6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiugf"]
+size = Vector2(32, 64)
+
+[node name="Goal" type="Area2D" unique_id=1975725648]
+collision_layer = 8
+script = ExtResource("1_la5ho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1163045393]
+shape = SubResource("RectangleShape2D_uiugf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=287711530]
+modulate = Color(1, 1, 0, 0.5)
+texture = ExtResource("2_024k6")
