@@ -6,3 +6,5 @@ PROGRESS:
 
 WEEK 1:
 <img width="1916" height="1079" alt="Screenshot 2026-09-09 160650" src="https://github.com/user-attachments/assets/5dedcff4-2de1-4cbb-95ce-18917420c581" />
+WEEK 2:
+<img width="1919" height="1079" alt="Screenshot 2026-09-16 220524" src="https://github.com/user-attachments/assets/e0240ef2-9232-4fd5-bd17-ac30be8f8506" />
