@@ -2,13 +2,13 @@ extends CharacterBody2D
 
 enum State { IDLE, RUN, JUMP, ATTACK, HURT, DEATH }
 
-const SPEED := 200.0
-const JUMP_VELOCITY := -400.0
-const COYOTE_TIME := 0.1
-const JUMP_BUFFER := 0.1
-
 signal health_changed(current: int, max: int)
 
+@export var speed: float = 200.0
+@export var jump_velocity: float = -400.0
+@export var max_fall_speed: float = 600.0
+@export var coyote_time: float = 0.1
+@export var jump_buffer: float = 0.1
 @export var max_health: int = 100
 
 var current_health: int = 100
@@ -38,9 +38,10 @@ func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		velocity.y = min(velocity.y, max_fall_speed)  # ponytail: cap fall speed to prevent tunneling
 		coyote_timer -= delta
 	else:
-		coyote_timer = COYOTE_TIME
+		coyote_timer = coyote_time
 
 	match current_state:
 		State.IDLE, State.RUN, State.JUMP:
@@ -48,10 +49,10 @@ func _physics_process(delta: float) -> void:
 			_handle_attack_input()
 		State.ATTACK:
 			# Decelerate slightly during attack
-			velocity.x = move_toward(velocity.x, 0.0, SPEED * 2.0 * delta)
+			velocity.x = move_toward(velocity.x, 0.0, speed * 2.0 * delta)
 		State.HURT:
 			# Decelerate during hurt knockback
-			velocity.x = move_toward(velocity.x, 0.0, SPEED * 3.0 * delta)
+			velocity.x = move_toward(velocity.x, 0.0, speed * 3.0 * delta)
 
 	move_and_slide()
 	_update_animation()
@@ -59,23 +60,23 @@ func _physics_process(delta: float) -> void:
 
 func _handle_movement(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
-		jump_buffer_timer = JUMP_BUFFER
+		jump_buffer_timer = jump_buffer
 	else:
 		jump_buffer_timer -= delta
 
 	if jump_buffer_timer > 0.0 and coyote_timer > 0.0:
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 		coyote_timer = 0.0
 		jump_buffer_timer = 0.0
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 		facing_direction = -1 if direction < 0.0 else 1
 		sprite.flip_h = direction < 0.0
 		hitbox_shape.position.x = 12.0 * facing_direction
 	else:
-		velocity.x = move_toward(velocity.x, 0.0, SPEED)
+		velocity.x = move_toward(velocity.x, 0.0, speed)
 
 	if not is_on_floor():
 		current_state = State.JUMP
