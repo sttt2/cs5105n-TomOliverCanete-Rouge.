@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4]
+[gd_scene load_steps=16 format=4]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_level"]
 [ext_resource type="TileSet" path="res://tilesets/platformer_tileset.tres" id="2_tiles"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" path="res://hazards/spike.tscn" id="13_spike"]
 [ext_resource type="PackedScene" path="res://enemy.tscn" id="14_enemy"]
 [ext_resource type="PackedScene" path="res://hud.tscn" id="15_hud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1024, 64)
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_level")
@@ -100,6 +103,14 @@ tile_map_data = PackedByteArray("AAACAAkAAAACAAUAAAALAAkAAAADAAUAAAAQAAkAAAACAAU
 tile_set = ExtResource("2_tiles")
 collision_enabled = false
 texture_filter = 0
+
+[node name="GroundCollider" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollider"]
+position = Vector2(512, 336)
+shape = SubResource("RectangleShape2D_ground")
 
 [node name="Tree" type="Sprite2D" parent="."]
 z_index = 2
