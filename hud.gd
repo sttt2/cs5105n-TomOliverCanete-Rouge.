@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var health_bar: ProgressBar = $MarginContainer/VBoxContainer/HealthBar
+@onready var health_bar: TextureProgressBar = $MarginContainer/VBoxContainer/HealthBar
 
 func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player")
@@ -10,6 +10,6 @@ func _ready() -> void:
 		health_bar.max_value = player.max_health
 		health_bar.value = player.current_health
 
-func _on_player_health_changed(current: int, max: int) -> void:
-	health_bar.max_value = max
+func _on_player_health_changed(current: int, max_health: int) -> void:
+	health_bar.max_value = max_health
 	health_bar.value = current
