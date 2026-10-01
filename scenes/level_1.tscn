@@ -1,150 +1,147 @@
-[gd_scene load_steps=16 format=4]
+[gd_scene format=4 uid="uid://bi1su3b8u03tr"]
 
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_level"]
-[ext_resource type="TileSet" path="res://tilesets/platformer_tileset.tres" id="2_tiles"]
+[ext_resource type="Script" uid="uid://cnhlsqj52cxjx" path="res://scenes/level.gd" id="1_level"]
+[ext_resource type="TileSet" uid="uid://b6j2dna58fgur" path="res://tilesets/platformer_tileset.tres" id="2_tiles"]
 [ext_resource type="PackedScene" path="res://player.tscn" id="3_player"]
 [ext_resource type="PackedScene" path="res://hazards/start_zone.tscn" id="4_start"]
 [ext_resource type="PackedScene" path="res://hazards/goal.tscn" id="5_goal"]
 [ext_resource type="PackedScene" path="res://hazards/kill_zone.tscn" id="6_kill"]
+[ext_resource type="Texture2D" uid="uid://c6jog8xeh1to8" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="7_bg1"]
 [ext_resource type="PackedScene" path="res://enemy.tscn" id="7_enemy"]
-[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="7_bg1"]
-[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="8_bg2"]
-[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="9_bg3"]
-[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="10_bg4"]
-[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="11_bg5"]
-[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Tree1.png" id="12_tree"]
+[ext_resource type="Texture2D" uid="uid://dh72uukcbwk70" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="8_bg2"]
+[ext_resource type="Texture2D" uid="uid://gitlqd6nwiwd" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="9_bg3"]
+[ext_resource type="Texture2D" uid="uid://dpifmtlgvnsqv" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="10_bg4"]
+[ext_resource type="Texture2D" uid="uid://bnacg5w2kc1kr" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="11_bg5"]
+[ext_resource type="Texture2D" uid="uid://br60utdq1dh8m" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Tree1.png" id="12_tree"]
 [ext_resource type="PackedScene" path="res://hud.tscn" id="13_hud"]
-[ext_resource type="Script" path="res://debug_collision.gd" id="14_debug"]
+[ext_resource type="Script" uid="uid://03w8rkye3p7p" path="res://debug_collision.gd" id="14_debug"]
+[ext_resource type="PackedScene" path="res://hazards/wooden_spike.tscn" id="15_spike"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
-size = Vector2(1024, 64)
-
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" unique_id=1906984263]
 script = ExtResource("1_level")
-level_id = 1
-level_width_tiles = 32
-level_height_tiles = 16
-fall_death_y = 560.0
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1771598957]
 color = Color(0.94, 0.96, 0.9, 1)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=414774476]
 
-[node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=241136681]
 motion_scale = Vector2(0.7, 0.12)
 motion_mirroring = Vector2(1024, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer1"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer1" unique_id=422027976]
 position = Vector2(0, 40)
 texture = ExtResource("7_bg1")
 centered = false
-texture_filter = 0
 
-[node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1843854497]
 motion_scale = Vector2(0.55, 0.1)
 motion_mirroring = Vector2(1024, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer2"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer2" unique_id=904530949]
 position = Vector2(0, 40)
 texture = ExtResource("8_bg2")
 centered = false
-texture_filter = 0
 
-[node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2040944729]
 motion_scale = Vector2(0.4, 0.08)
 motion_mirroring = Vector2(1024, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer3"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer3" unique_id=2015966139]
 position = Vector2(0, 40)
 texture = ExtResource("9_bg3")
 centered = false
-texture_filter = 0
 
-[node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=345894377]
 motion_scale = Vector2(0.25, 0.06)
 motion_mirroring = Vector2(1024, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer4"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer4" unique_id=317145394]
 position = Vector2(0, 40)
 texture = ExtResource("10_bg4")
 centered = false
-texture_filter = 0
 
-[node name="Layer5" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Layer5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1120903289]
 motion_scale = Vector2(0.12, 0.04)
 motion_mirroring = Vector2(1024, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer5"]
-position = Vector2(0, 40)
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer5" unique_id=2082152334]
+z_index = -1
+position = Vector2(-657, -407)
+scale = Vector2(1.3037107, 3.7312133)
 texture = ExtResource("11_bg5")
 centered = false
-texture_filter = 0
 
-[node name="Background" type="TileMapLayer" parent="."]
+[node name="Background" type="TileMapLayer" parent="." unique_id=1871748832]
 z_index = -2
-tile_map_data = PackedByteArray()
 tile_set = ExtResource("2_tiles")
 collision_enabled = false
-texture_filter = 0
 
-[node name="Ground" type="TileMapLayer" parent="."]
-z_index = 0
-tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAAAAAsAAAAFAAQAAAAAAAwAAAAFAAQAAAABAAoAAAABAAAAAAABAAsAAAAFAAQAAAABAAwAAAAFAAQAAAACAAoAAAABAAAAAAACAAsAAAAFAAQAAAACAAwAAAAFAAQAAAADAAoAAAABAAAAAAADAAsAAAAFAAQAAAADAAwAAAAFAAQAAAAEAAoAAAABAAAAAAAEAAsAAAAFAAQAAAAEAAwAAAAFAAQAAAAFAAoAAAABAAAAAAAFAAsAAAAFAAQAAAAFAAwAAAAFAAQAAAAGAAoAAAABAAAAAAAGAAsAAAAFAAQAAAAGAAwAAAAFAAQAAAAHAAoAAAABAAAAAAAHAAsAAAAFAAQAAAAHAAwAAAAFAAQAAAAIAAoAAAABAAAAAAAIAAsAAAAFAAQAAAAIAAwAAAAFAAQAAAAJAAoAAAABAAAAAAAJAAsAAAAFAAQAAAAJAAwAAAAFAAQAAAAKAAoAAAACAAAAAAAKAAsAAAAFAAQAAAAKAAwAAAAFAAQAAAANAAoAAAAAAAAAAAANAAsAAAAFAAQAAAANAAwAAAAFAAQAAAAOAAoAAAABAAAAAAAOAAsAAAAFAAQAAAAOAAwAAAAFAAQAAAAPAAoAAAABAAAAAAAPAAsAAAAFAAQAAAAPAAwAAAAFAAQAAAAQAAoAAAABAAAAAAAQAAsAAAAFAAQAAAAQAAwAAAAFAAQAAAARAAoAAAABAAAAAAARAAsAAAAFAAQAAAARAAwAAAAFAAQAAAASAAoAAAABAAAAAAASAAsAAAAFAAQAAAASAAwAAAAFAAQAAAATAAoAAAABAAAAAAATAAsAAAAFAAQAAAATAAwAAAAFAAQAAAAUAAoAAAACAAAAAAAUAAsAAAAFAAQAAAAUAAwAAAAFAAQAAAAWAAkAAAAAAAAAAAAWAAoAAAAFAAQAAAAWAAsAAAAFAAQAAAAWAAwAAAAFAAQAAAAXAAkAAAABAAAAAAAXAAoAAAAFAAQAAAAXAAsAAAAFAAQAAAAXAAwAAAAFAAQAAAAYAAkAAAABAAAAAAAYAAoAAAAFAAQAAAAYAAsAAAAFAAQAAAAYAAwAAAAFAAQAAAAZAAkAAAABAAAAAAAZAAoAAAAFAAQAAAAZAAsAAAAFAAQAAAAZAAwAAAAFAAQAAAAaAAkAAAABAAAAAAAaAAoAAAAFAAQAAAAaAAsAAAAFAAQAAAAaAAwAAAAFAAQAAAAbAAkAAAABAAAAAAAbAAoAAAAFAAQAAAAbAAsAAAAFAAQAAAAbAAwAAAAFAAQAAAAcAAkAAAABAAAAAAAcAAoAAAAFAAQAAAAcAAsAAAAFAAQAAAAcAAwAAAAFAAQAAAAdAAkAAAABAAAAAAAdAAoAAAAFAAQAAAAdAAsAAAAFAAQAAAAdAAwAAAAFAAQAAAAeAAkAAAACAAAAAAAeAAoAAAAFAAQAAAAeAAsAAAAFAAQAAAAeAAwAAAAFAAQAAAA=")
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1668149382]
+tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAABAAoAAAABAAAAAAACAAoAAAABAAAAAAADAAoAAAABAAAAAAAEAAoAAAABAAAAAAAFAAoAAAABAAAAAAAGAAoAAAABAAAAAAAHAAoAAAABAAAAAAAIAAoAAAABAAAAAAAJAAoAAAABAAAAAAAKAAoAAAACAAAAAAANAAoAAAAAAAAAAAAOAAoAAAABAAAAAAAPAAoAAAABAAAAAAAQAAoAAAABAAAAAAARAAoAAAABAAAAAAASAAoAAAABAAAAAAATAAoAAAABAAAAAAAUAAoAAAACAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAcAAkAAAABAAAAAAAdAAkAAAABAAAAAAAAAAsAAAAAAAEAAAAAAAwAAAAAAAEAAAAAAA0AAAAAAAEAAAAAAA4AAAAAAAEAAAAAAA8AAAAAAAEAAAAAABAAAAAAAAEAAAABAAsAAAABAAEAAAACAAsAAAABAAEAAAACAAwAAAABAAEAAAADAAwAAAABAAEAAAADAA0AAAABAAEAAAAEAA0AAAABAAEAAAAEAA4AAAABAAEAAAAFAA4AAAABAAEAAAABABAAAAABAAEAAAACABAAAAABAAEAAAADABAAAAABAAEAAAADAA8AAAABAAEAAAAEAA8AAAABAAEAAAAGAA4AAAABAAEAAAAGAA8AAAABAAEAAAAHAA8AAAABAAEAAAABAA4AAAABAAEAAAABAA0AAAABAAEAAAABAAwAAAABAAEAAAACAA0AAAABAAEAAAACAA4AAAABAAEAAAACAA8AAAABAAEAAAABAA8AAAABAAEAAAAEAAwAAAABAAEAAAAFAAsAAAABAAEAAAAEAAsAAAABAAEAAAADAAsAAAABAAEAAAAGAAsAAAABAAEAAAAHAAsAAAABAAEAAAAIAAsAAAABAAEAAAAJAAsAAAABAAEAAAAJAAwAAAABAAEAAAAJAA0AAAABAAEAAAAJAA4AAAABAAEAAAAJAA8AAAABAAEAAAAJABAAAAABAAEAAAAIABAAAAABAAEAAAAHABAAAAABAAEAAAAGABAAAAABAAEAAAAFABAAAAABAAEAAAAEABAAAAABAAEAAAADAA4AAAABAAEAAAAFAA0AAAABAAEAAAAFAAwAAAABAAEAAAAGAAwAAAABAAEAAAAHAAwAAAABAAEAAAAFAA8AAAABAAEAAAAHAA4AAAABAAEAAAAHAA0AAAABAAEAAAAGAA0AAAABAAEAAAAIAAwAAAABAAEAAAAIAA0AAAABAAEAAAAIAA4AAAABAAEAAAAIAA8AAAABAAEAAAAKAAsAAAACAAEAAAAKAAwAAAACAAEAAAAKAA0AAAACAAEAAAAKAA4AAAACAAEAAAAKAA8AAAACAAEAAAAKABAAAAACAAEAAAANAAsAAAAAAAEAAAANAAwAAAAAAAEAAAANAA0AAAAAAAEAAAANAA4AAAAAAAEAAAANAA8AAAAAAAEAAAANABAAAAAAAAEAAAABABEAAAABAAIAAAACABEAAAABAAIAAAADABEAAAABAAIAAAAEABEAAAABAAIAAAAFABEAAAABAAIAAAAGABEAAAABAAIAAAAHABEAAAABAAIAAAAIABEAAAABAAIAAAAJABEAAAABAAIAAAAAABEAAAAAAAIAAAAKABEAAAACAAIAAAANABEAAAAAAAIAAAAOABEAAAABAAIAAAAPABEAAAABAAIAAAAQABEAAAABAAIAAAARABEAAAABAAIAAAASABEAAAABAAIAAAATABEAAAABAAIAAAAUABEAAAACAAIAAAAUABAAAAACAAEAAAAUAA8AAAACAAEAAAAUAA4AAAACAAEAAAAUAA0AAAACAAEAAAAOAAsAAAABAAEAAAAOAAwAAAABAAEAAAAPAAwAAAABAAEAAAAPAA0AAAABAAEAAAAQAA0AAAABAAEAAAAQAA4AAAABAAEAAAARAA4AAAABAAEAAAARAA8AAAABAAEAAAASAA8AAAABAAEAAAASABAAAAABAAEAAAATABAAAAABAAEAAAARABAAAAABAAEAAAAQABAAAAABAAEAAAAPABAAAAABAAEAAAAOABAAAAABAAEAAAAOAA8AAAABAAEAAAAOAA4AAAABAAEAAAAPAA4AAAABAAEAAAAQAA8AAAABAAEAAAAPAA8AAAABAAEAAAAOAA0AAAABAAEAAAAQAAwAAAABAAEAAAARAAwAAAABAAEAAAARAAsAAAABAAEAAAASAAsAAAABAAEAAAAQAAsAAAABAAEAAAAPAAsAAAABAAEAAAATAAsAAAABAAEAAAATAAwAAAABAAEAAAATAA0AAAABAAEAAAATAA4AAAABAAEAAAASAA4AAAABAAEAAAARAA0AAAABAAEAAAASAAwAAAABAAEAAAASAA0AAAABAAEAAAATAA8AAAABAAEAAAAUAAsAAAACAAEAAAAUAAwAAAACAAEAAAAYAAkAAAAAAAAAAAAeAAkAAAACAAAAAAAYAAoAAAAAAAEAAAAYAAsAAAAAAAEAAAAYAAwAAAAAAAEAAAAYAA0AAAAAAAEAAAAYAA4AAAAAAAEAAAAYAA8AAAAAAAEAAAAYABAAAAAAAAEAAAAYABEAAAAAAAIAAAAZABEAAAABAAIAAAAaABEAAAABAAIAAAAbABEAAAABAAIAAAAcABEAAAABAAIAAAAdABEAAAABAAIAAAAeABEAAAACAAIAAAAeABAAAAACAAEAAAAeAA8AAAACAAEAAAAeAA4AAAACAAEAAAAeAA0AAAACAAEAAAAeAAwAAAACAAEAAAAeAAsAAAACAAEAAAAeAAoAAAACAAEAAAAZAAoAAAABAAEAAAAZAAsAAAABAAEAAAAZAAwAAAABAAEAAAAZAA0AAAABAAEAAAAZAA4AAAABAAEAAAAaAA4AAAABAAEAAAAaAA8AAAABAAEAAAAZAA8AAAABAAEAAAAZABAAAAABAAEAAAAaABAAAAABAAEAAAAbABAAAAABAAEAAAAcABAAAAABAAEAAAAcAA8AAAABAAEAAAAdAA8AAAABAAEAAAAdABAAAAABAAEAAAAbAA8AAAABAAEAAAAbAA4AAAABAAEAAAAcAA4AAAABAAEAAAAcAA0AAAABAAEAAAAaAA0AAAABAAEAAAAaAAwAAAABAAEAAAAbAAwAAAABAAEAAAAbAA0AAAABAAEAAAAaAAsAAAABAAEAAAAbAAsAAAABAAEAAAAbAAoAAAABAAEAAAAcAAoAAAABAAEAAAAaAAoAAAABAAEAAAAdAAoAAAABAAEAAAAdAAsAAAABAAEAAAAdAAwAAAABAAEAAAAdAA0AAAABAAEAAAAdAA4AAAABAAEAAAAcAAsAAAABAAEAAAAcAAwAAAABAAEAAAA=")
 tile_set = ExtResource("2_tiles")
-collision_layer = 2
-collision_mask = 0
-collision_enabled = true
-texture_filter = 0
 
-[node name="Foreground" type="TileMapLayer" parent="."]
+[node name="Foreground" type="TileMapLayer" parent="." unique_id=1800849539]
 z_index = 1
-tile_map_data = PackedByteArray("AAACAAkAAAACAAUAAAAFAAkAAAADAAUAAAAIAAkAAAACAAUAAAAQAAkAAAADAAUAAAATAAkAAAACAAUAAAAYAAgAAAADAAUAAAAbAAgAAAACAAUAAAA=")
+tile_map_data = PackedByteArray("AAAFAAkAAAADAAUAAAAQAAkAAAADAAUAAAAYAAgAAAADAAUAAAAbAAgAAAACAAUAAAA=")
 tile_set = ExtResource("2_tiles")
 collision_enabled = false
-texture_filter = 0
 
-[node name="GroundCollider" type="StaticBody2D" parent="."]
+[node name="GroundCollider" type="StaticBody2D" parent="." unique_id=718437631]
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollider"]
-position = Vector2(512, 336)
-shape = SubResource("RectangleShape2D_ground")
-
-[node name="Tree" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(48, 320)
+[node name="Tree" type="Sprite2D" parent="." unique_id=904129741]
+z_index = -1
+position = Vector2(52, 284)
 texture = ExtResource("12_tree")
 offset = Vector2(0, -64)
-texture_filter = 0
 
-[node name="Hint" type="Label" parent="."]
+[node name="Hint" type="Label" parent="." unique_id=575086508]
 offset_left = 300.0
 offset_top = 248.0
 offset_right = 460.0
 offset_bottom = 268.0
-theme_override_colors/font_color = Color(0.95, 0.98, 0.85, 1)
+theme_override_colors/font_color = Color(0, 0.043137256, 0.047058824, 1)
 theme_override_font_sizes/font_size = 10
 text = "JUMP THE GAP"
 horizontal_alignment = 1
 
-[node name="StartZone" parent="." instance=ExtResource("4_start")]
+[node name="Hint" type="Label" parent="Hint" unique_id=1326976146]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 17.0
+offset_right = 323.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0, 0.043137256, 0.047058824, 1)
+theme_override_font_sizes/font_size = 10
+text = "Press left mouse button to attack"
+horizontal_alignment = 1
+
+[node name="StartZone" parent="." unique_id=407806857 instance=ExtResource("4_start")]
 position = Vector2(80, 300)
 
-[node name="Player" parent="." instance=ExtResource("3_player")]
+[node name="Player" parent="." unique_id=213491613 instance=ExtResource("3_player")]
 position = Vector2(80, 300)
 
-[node name="Enemy" parent="." instance=ExtResource("7_enemy")]
+[node name="Enemy" parent="." unique_id=1557108393 instance=ExtResource("7_enemy")]
 position = Vector2(600, 318)
 
-[node name="Goal" parent="." instance=ExtResource("5_goal")]
+[node name="Goal" parent="." unique_id=2140935794 instance=ExtResource("5_goal")]
 position = Vector2(880, 288)
 
-[node name="KillZone" parent="." instance=ExtResource("6_kill")]
+[node name="KillZone" parent="." unique_id=709483229 instance=ExtResource("6_kill")]
 position = Vector2(512, 520)
 
-[node name="HUD" parent="." instance=ExtResource("13_hud")]
+[node name="Hazards" type="Node" parent="."]
 
-[node name="Debug" type="Node" parent="."]
+[node name="Spike1" parent="Hazards" instance=ExtResource("15_spike")]
+position = Vector2(300, 290)
+
+[node name="Spike2" parent="Hazards" instance=ExtResource("15_spike")]
+position = Vector2(500, 290)
+
+[node name="HUD" parent="." unique_id=1194982320 instance=ExtResource("13_hud")]
+
+[node name="Debug" type="Node" parent="." unique_id=175109706]
 script = ExtResource("14_debug")

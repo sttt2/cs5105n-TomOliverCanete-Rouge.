@@ -338,3 +338,7 @@ script = ExtResource("8_hurt_comp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_hurtbox")
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="."]
+bus = &"Master"
+

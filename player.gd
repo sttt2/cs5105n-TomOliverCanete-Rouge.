@@ -23,6 +23,7 @@ var facing_direction: int = 1
 @onready var hitbox: HitboxComponent = $Hitbox
 @onready var hitbox_shape: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var hurtbox: HurtboxComponent = $Hurtbox
+@onready var jump_sfx: AudioStreamPlayer = $JumpSFX
 
 
 func _ready() -> void:
@@ -68,6 +69,8 @@ func _handle_movement(delta: float) -> void:
 		velocity.y = jump_velocity
 		coyote_timer = 0.0
 		jump_buffer_timer = 0.0
+		if jump_sfx.stream:  # Only play if sound is assigned
+			jump_sfx.play()
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
