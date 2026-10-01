@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d13rl3h1j1y7k"
+path="res://.godot/imported/Hit_Hurt8.wav-8b9994ef2810ee0baf6e4d66bb9d0afc.sample"
+
+[deps]
+
+source_file="res://Sfx pack 4 free/Sfx pack 4 free/Hit/Hit_Hurt8.wav"
+dest_files=["res://.godot/imported/Hit_Hurt8.wav-8b9994ef2810ee0baf6e4d66bb9d0afc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccixa7u4g1vq5"
+path="res://.godot/imported/Jump4.wav-27a91fe5d05b0fa9d897f01e5b26b10d.sample"
+
+[deps]
+
+source_file="res://Sfx pack 4 free/Sfx pack 4 free/Jump/Jump4.wav"
+dest_files=["res://.godot/imported/Jump4.wav-27a91fe5d05b0fa9d897f01e5b26b10d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

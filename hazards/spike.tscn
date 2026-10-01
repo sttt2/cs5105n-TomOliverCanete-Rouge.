@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://hazards/spike.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="2_tiles"]
+[ext_resource type="Script" path="res://hazards/wooden_spike.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/wooden_spike.png" id="2_texture"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hit"]
-size = Vector2(26, 18)
+size = Vector2(32, 32)
 
 [node name="Spike" type="Area2D"]
-collision_layer = 8
+collision_layer = 4
 collision_mask = 1
 monitoring = true
 monitorable = false
@@ -15,12 +15,8 @@ z_index = 2
 script = ExtResource("1_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tiles")
-offset = Vector2(0, -16)
-region_enabled = true
-region_rect = Rect2(0, 96, 32, 32)
+texture = ExtResource("2_texture")
 texture_filter = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_hit")

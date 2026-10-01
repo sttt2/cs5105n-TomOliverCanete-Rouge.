@@ -24,6 +24,8 @@ var facing_direction: int = 1
 @onready var hitbox_shape: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var hurtbox: HurtboxComponent = $Hurtbox
 @onready var jump_sfx: AudioStreamPlayer = $JumpSFX
+@onready var take_damage_sfx: AudioStreamPlayer = $TakeDamageSFX
+@onready var attack_sfx: AudioStreamPlayer = $AttackSFX
 
 
 func _ready() -> void:
@@ -92,6 +94,8 @@ func _handle_movement(delta: float) -> void:
 func _handle_attack_input() -> void:
 	if Input.is_action_just_pressed("attack") and is_on_floor():
 		current_state = State.ATTACK
+		if attack_sfx.stream:
+			attack_sfx.play()
 		anim.play("attack")
 
 
@@ -123,6 +127,8 @@ func _on_hit_received(damage: int, source: Node2D, knockback: float) -> void:
 		kb_dir = 1.0 if source.global_position.x < global_position.x else -1.0
 	velocity.x = kb_dir * knockback
 	velocity.y = -100.0
+	if take_damage_sfx.stream:
+		take_damage_sfx.play()
 	anim.play("hurt")
 
 
