@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dpifmtlgvnsqv" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="10_bg4"]
 [ext_resource type="Texture2D" uid="uid://bnacg5w2kc1kr" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="11_bg5"]
 [ext_resource type="Texture2D" uid="uid://br60utdq1dh8m" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Tree1.png" id="12_tree"]
-[ext_resource type="PackedScene" path="res://hazards/spike.tscn" id="13_spike"]
+[ext_resource type="PackedScene" uid="uid://covqxonw805ls" path="res://hazards/spike.tscn" id="13_spike"]
 [ext_resource type="PackedScene" path="res://enemy.tscn" id="14_enemy"]
 [ext_resource type="PackedScene" path="res://hud.tscn" id="15_hud"]
 
@@ -105,7 +105,7 @@ offset_right = 700.0
 offset_bottom = 268.0
 theme_override_colors/font_color = Color(1, 0.45, 0.4, 1)
 theme_override_font_sizes/font_size = 10
-text = "RED SPIKES KILL"
+text = "SPIKES KILL"
 horizontal_alignment = 1
 
 [node name="StartZone" parent="." unique_id=647157814 instance=ExtResource("4_start")]

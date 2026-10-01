@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://br60utdq1dh8m" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Tree1.png" id="12_tree"]
 [ext_resource type="PackedScene" path="res://hud.tscn" id="13_hud"]
 [ext_resource type="Script" uid="uid://03w8rkye3p7p" path="res://debug_collision.gd" id="14_debug"]
-[ext_resource type="PackedScene" path="res://hazards/wooden_spike.tscn" id="15_spike"]
 
 [node name="Level1" type="Node2D" unique_id=1906984263]
 script = ExtResource("1_level")
@@ -133,13 +132,7 @@ position = Vector2(880, 288)
 [node name="KillZone" parent="." unique_id=709483229 instance=ExtResource("6_kill")]
 position = Vector2(512, 520)
 
-[node name="Hazards" type="Node" parent="."]
-
-[node name="Spike1" parent="Hazards" instance=ExtResource("15_spike")]
-position = Vector2(300, 290)
-
-[node name="Spike2" parent="Hazards" instance=ExtResource("15_spike")]
-position = Vector2(500, 290)
+[node name="Hazards" type="Node" parent="." unique_id=1308228664]
 
 [node name="HUD" parent="." unique_id=1194982320 instance=ExtResource("13_hud")]
 
