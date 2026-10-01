@@ -1,75 +1,145 @@
-[gd_scene format=4]
+[gd_scene load_steps=15 format=4]
 
-[ext_resource type="PackedScene" path="res://hazards/spike.tscn" id="1_y0kc7"]
-[ext_resource type="Script" path="res://hazards/spike.gd" id="2_ne2mo"]
-[ext_resource type="TileSet" path="res://tilesets/platformer_tileset.tres" id="3_6cvei"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="4_que50"]
-[ext_resource type="Script" path="res://player.gd" id="5_hey2k"]
-[ext_resource type="PackedScene" path="res://hazards/goal.tscn" id="6_172wr"]
-[ext_resource type="Script" path="res://hazards/goal.gd" id="7_g2hoc"]
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_level"]
+[ext_resource type="TileSet" path="res://tilesets/platformer_tileset.tres" id="2_tiles"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://hazards/start_zone.tscn" id="4_start"]
+[ext_resource type="PackedScene" path="res://hazards/goal.tscn" id="5_goal"]
+[ext_resource type="PackedScene" path="res://hazards/kill_zone.tscn" id="6_kill"]
+[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="7_bg1"]
+[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="8_bg2"]
+[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="9_bg3"]
+[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="10_bg4"]
+[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="11_bg5"]
+[ext_resource type="Texture2D" path="res://assets/platformer/GandalfHardcore FREE Platformer Assets/Tree1.png" id="12_tree"]
+[ext_resource type="PackedScene" path="res://hazards/spike.tscn" id="13_spike"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="14_enemy"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="15_hud"]
 
-[node name="Level2" type="Node2D" unique_id=355008994]
-
-[node name="Spike" type="Area2D" parent="." unique_id=572007919 instance=ExtResource("1_y0kc7")]
-position = Vector2(88, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="@Area2D@2" type="Area2D" parent="." unique_id=780168474 instance=ExtResource("1_y0kc7")]
-position = Vector2(104, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="@Area2D@3" type="Area2D" parent="." unique_id=1731039180 instance=ExtResource("1_y0kc7")]
-position = Vector2(120, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="@Area2D@4" type="Area2D" parent="." unique_id=891019272 instance=ExtResource("1_y0kc7")]
-position = Vector2(136, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="@Area2D@5" type="Area2D" parent="." unique_id=1709845987 instance=ExtResource("1_y0kc7")]
-position = Vector2(200, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="@Area2D@6" type="Area2D" parent="." unique_id=1010768967 instance=ExtResource("1_y0kc7")]
-position = Vector2(216, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="@Area2D@7" type="Area2D" parent="." unique_id=492692182 instance=ExtResource("1_y0kc7")]
-position = Vector2(232, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="@Area2D@8" type="Area2D" parent="." unique_id=132683690 instance=ExtResource("1_y0kc7")]
-position = Vector2(248, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="@Area2D@9" type="Area2D" parent="." unique_id=285708921 instance=ExtResource("1_y0kc7")]
-position = Vector2(264, 168)
-collision_layer = 4
-script = ExtResource("2_ne2mo")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=27690224]
-tile_map_data = PackedByteArray("AAD7/woAAAABAAEAAAD7/wsAAAABAAIAAAD8/woAAAABAAEAAAD8/wsAAAABAAIAAAD9/woAAAABAAEAAAD9/wsAAAABAAIAAAD+/woAAAABAAEAAAD+/wsAAAABAAIAAAD//woAAAABAAEAAAD//wsAAAABAAIAAAAAAAoAAAABAAEAAAAAAAsAAAABAAIAAAABAAoAAAABAAEAAAABAAsAAAABAAIAAAACAAoAAAABAAEAAAACAAsAAAABAAIAAAADAAoAAAABAAEAAAADAAsAAAABAAIAAAAEAAoAAAABAAEAAAAEAAsAAAABAAIAAAAJAAoAAAABAAEAAAAJAAsAAAABAAIAAAAKAAoAAAABAAEAAAAKAAsAAAABAAIAAAALAAoAAAABAAEAAAALAAsAAAABAAIAAAARAAoAAAABAAEAAAARAAsAAAABAAIAAAASAAoAAAABAAEAAAASAAsAAAABAAIAAAATAAoAAAABAAEAAAATAAsAAAABAAIAAAAUAAoAAAABAAEAAAAUAAsAAAABAAIAAAAVAAoAAAABAAEAAAAVAAsAAAABAAIAAAAWAAoAAAABAAEAAAAWAAsAAAABAAIAAAAXAAoAAAABAAEAAAAXAAsAAAABAAIAAAAYAAoAAAABAAEAAAAYAAsAAAABAAIAAAAZAAoAAAABAAEAAAAZAAsAAAABAAIAAAAaAAoAAAABAAEAAAAaAAsAAAABAAIAAAAbAAoAAAABAAEAAAAbAAsAAAABAAIAAAAcAAoAAAABAAEAAAAcAAsAAAABAAIAAAAdAAoAAAABAAEAAAAdAAsAAAABAAIAAAA=")
-tile_set = ExtResource("3_6cvei")
-
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1781941666 instance=ExtResource("4_que50")]
-position = Vector2(32, 100)
-collision_mask = 7
-script = ExtResource("5_hey2k")
-
-[node name="Goal" type="Area2D" parent="." unique_id=1975725648 instance=ExtResource("6_172wr")]
-position = Vector2(400, 128)
-collision_layer = 8
-script = ExtResource("7_g2hoc")
-next_scene = "res://scenes/level_1.tscn"
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_level")
+level_id = 2
+level_width_tiles = 40
+level_height_tiles = 16
+fall_death_y = 560.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.8, 0.8, 0.9, 1)
+color = Color(0.82, 0.86, 0.94, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.12)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer1"]
+position = Vector2(0, 40)
+texture = ExtResource("7_bg1")
+centered = false
+texture_filter = 0
+
+[node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.55, 0.1)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer2"]
+position = Vector2(0, 40)
+texture = ExtResource("8_bg2")
+centered = false
+texture_filter = 0
+
+[node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.08)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer3"]
+position = Vector2(0, 40)
+texture = ExtResource("9_bg3")
+centered = false
+texture_filter = 0
+
+[node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.06)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer4"]
+position = Vector2(0, 40)
+texture = ExtResource("10_bg4")
+centered = false
+texture_filter = 0
+
+[node name="Layer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.12, 0.04)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer5"]
+position = Vector2(0, 40)
+texture = ExtResource("11_bg5")
+centered = false
+texture_filter = 0
+
+[node name="Background" type="TileMapLayer" parent="."]
+z_index = -2
+tile_map_data = PackedByteArray()
+tile_set = ExtResource("2_tiles")
+collision_enabled = false
+texture_filter = 0
+
+[node name="Ground" type="TileMapLayer" parent="."]
+z_index = 0
+tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAAAAAsAAAAFAAQAAAAAAAwAAAAFAAQAAAABAAoAAAABAAAAAAABAAsAAAAFAAQAAAABAAwAAAAFAAQAAAACAAoAAAABAAAAAAACAAsAAAAFAAQAAAACAAwAAAAFAAQAAAADAAoAAAABAAAAAAADAAsAAAAFAAQAAAADAAwAAAAFAAQAAAAEAAoAAAABAAAAAAAEAAsAAAAFAAQAAAAEAAwAAAAFAAQAAAAFAAoAAAACAAAAAAAFAAsAAAAFAAQAAAAFAAwAAAAFAAQAAAAJAAoAAAAAAAAAAAAJAAsAAAAFAAQAAAAJAAwAAAAFAAQAAAAKAAoAAAABAAAAAAAKAAsAAAAFAAQAAAAKAAwAAAAFAAQAAAALAAoAAAABAAAAAAALAAsAAAAFAAQAAAALAAwAAAAFAAQAAAAMAAoAAAABAAAAAAAMAAsAAAAFAAQAAAAMAAwAAAAFAAQAAAANAAoAAAACAAAAAAANAAsAAAAFAAQAAAANAAwAAAAFAAQAAAAPAAoAAAAAAAAAAAAPAAsAAAAFAAQAAAAPAAwAAAAFAAQAAAAQAAoAAAABAAAAAAAQAAsAAAAFAAQAAAAQAAwAAAAFAAQAAAARAAoAAAABAAAAAAARAAsAAAAFAAQAAAARAAwAAAAFAAQAAAASAAoAAAABAAAAAAASAAsAAAAFAAQAAAASAAwAAAAFAAQAAAATAAoAAAABAAAAAAATAAsAAAAFAAQAAAATAAwAAAAFAAQAAAAUAAoAAAABAAAAAAAUAAsAAAAFAAQAAAAUAAwAAAAFAAQAAAAVAAoAAAABAAAAAAAVAAsAAAAFAAQAAAAVAAwAAAAFAAQAAAAWAAoAAAACAAAAAAAWAAsAAAAFAAQAAAAWAAwAAAAFAAQAAAAaAAgAAAAAAAAAAAAaAAkAAAAFAAQAAAAbAAgAAAABAAAAAAAbAAkAAAAFAAQAAAAcAAgAAAACAAAAAAAcAAkAAAAFAAQAAAAgAAoAAAAAAAAAAAAgAAsAAAAFAAQAAAAgAAwAAAAFAAQAAAAhAAoAAAABAAAAAAAhAAsAAAAFAAQAAAAhAAwAAAAFAAQAAAAiAAoAAAABAAAAAAAiAAsAAAAFAAQAAAAiAAwAAAAFAAQAAAAjAAoAAAABAAAAAAAjAAsAAAAFAAQAAAAjAAwAAAAFAAQAAAAkAAoAAAABAAAAAAAkAAsAAAAFAAQAAAAkAAwAAAAFAAQAAAAlAAoAAAABAAAAAAAlAAsAAAAFAAQAAAAlAAwAAAAFAAQAAAAmAAoAAAABAAAAAAAmAAsAAAAFAAQAAAAmAAwAAAAFAAQAAAAnAAoAAAACAAAAAAAnAAsAAAAFAAQAAAAnAAwAAAAFAAQAAAA=")
+tile_set = ExtResource("2_tiles")
+collision_enabled = true
+texture_filter = 0
+
+[node name="Foreground" type="TileMapLayer" parent="."]
+z_index = 1
+tile_map_data = PackedByteArray("AAACAAkAAAACAAUAAAALAAkAAAADAAUAAAAQAAkAAAACAAUAAAAVAAkAAAADAAUAAAAiAAkAAAACAAUAAAAmAAkAAAADAAUAAAA=")
+tile_set = ExtResource("2_tiles")
+collision_enabled = false
+texture_filter = 0
+
+[node name="Tree" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(40, 320)
+texture = ExtResource("12_tree")
+offset = Vector2(0, -64)
+texture_filter = 0
+
+[node name="Hint" type="Label" parent="."]
+offset_left = 520.0
+offset_top = 248.0
+offset_right = 700.0
+offset_bottom = 268.0
+theme_override_colors/font_color = Color(1, 0.45, 0.4, 1)
+theme_override_font_sizes/font_size = 10
+text = "RED SPIKES KILL"
+horizontal_alignment = 1
+
+[node name="StartZone" parent="." instance=ExtResource("4_start")]
+position = Vector2(64, 300)
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+position = Vector2(64, 300)
+
+[node name="Spike1" parent="." instance=ExtResource("13_spike")]
+position = Vector2(560, 320)
+
+[node name="Spike2" parent="." instance=ExtResource("13_spike")]
+position = Vector2(592, 320)
+
+[node name="Spike3" parent="." instance=ExtResource("13_spike")]
+position = Vector2(624, 320)
+
+[node name="Enemy" parent="." instance=ExtResource("14_enemy")]
+position = Vector2(1104, 318)
+
+[node name="Goal" parent="." instance=ExtResource("5_goal")]
+position = Vector2(1216, 320)
+next_scene = "res://scenes/level_1.tscn"
+
+[node name="KillZone" parent="." instance=ExtResource("6_kill")]
+position = Vector2(640, 520)
+
+[node name="HUD" parent="." instance=ExtResource("15_hud")]
 
