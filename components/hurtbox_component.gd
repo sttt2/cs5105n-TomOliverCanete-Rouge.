@@ -9,6 +9,7 @@ signal hit_received(damage: int, source: Node2D, knockback: float)
 var _timer: float = 0.0
 
 func _ready() -> void:
+	add_to_group("hurtbox")
 	area_entered.connect(_on_area_entered)
 
 func _physics_process(delta: float) -> void:
