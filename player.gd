@@ -31,6 +31,13 @@ var facing_direction: int = 1
 func _ready() -> void:
 	add_to_group("player")
 	current_health = max_health
+
+	# Apply loaded state if SaveManager exists
+	if has_node("/root/SaveManager"):
+		var sm = get_node("/root/SaveManager")
+		if sm.current_save_data.has("current_health"):
+			current_health = sm.current_save_data["current_health"]
+
 	hurtbox.hit_received.connect(_on_hit_received)
 	anim.animation_finished.connect(_on_animation_finished)
 
@@ -130,6 +137,10 @@ func _on_hit_received(damage: int, source: Node2D, knockback: float) -> void:
 	if take_damage_sfx.stream:
 		take_damage_sfx.play()
 	anim.play("hurt")
+	# Week 7 — juice: hit-stop + screen-shake on player damage
+	if has_node("/root/GameFeel"):
+		get_node("/root/GameFeel").hit_stop(0.08)
+		get_node("/root/GameFeel").screen_shake(5.0, 0.25)
 
 
 func _on_animation_finished(anim_name: StringName) -> void:

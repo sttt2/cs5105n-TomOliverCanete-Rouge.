@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Rouge"
-run/main_scene="res://scenes/level_1.tscn"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 TransitionManager="*res://transition_manager.tscn"
+GameFeel="*res://game_feel.gd"
+SaveManager="*res://save_manager.gd"
 
 [display]
 

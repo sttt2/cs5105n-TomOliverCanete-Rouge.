@@ -160,3 +160,7 @@ func die() -> void:
 	hitbox_shape.set_deferred("disabled", true)
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)
 	anim.play("death")
+	# Week 7 - juice: hit-stop + strong screen shake on enemy death
+	if has_node("/root/GameFeel"):
+		get_node("/root/GameFeel").hit_stop(0.12)
+		get_node("/root/GameFeel").screen_shake(8.0, 0.3)

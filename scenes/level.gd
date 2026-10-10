@@ -7,7 +7,9 @@ extends Node2D
 
 
 func _ready() -> void:
-	pass
+	# Week 7 - Auto-save progress
+	if has_node("/root/SaveManager"):
+		get_node("/root/SaveManager").save_game()
 
 
 func _process(_delta: float) -> void:
